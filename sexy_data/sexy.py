@@ -151,7 +151,7 @@ def experiment2():
     subCount = lastSub
     xo.lastSub += 1
     # subCount = 1
-    if subCount+1 == len(subreddits):
+    if subCount-1 == len(subreddits):
         print("FINISHED ALL SUBREDDITS")
         xo.lastSub = 0
         return True
