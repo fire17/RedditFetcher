@@ -1,6 +1,8 @@
 # sexy_data.py
+# https://github.com/fire17/RedditFetcher
 import praw,traceback
 import requests
+# pip3 or pip install xo-gd
 from xo import *
 # from pprint import pprint as pp
 
@@ -136,7 +138,8 @@ def experiment2():
     ,"ask","AskReddit","funny"
     ,"NoStupidQuestions","LifeProTips"
     ,"memes","gaming","motocycle"
-    ,"SuccessionTV","femalefashionadvice","relationship_advice"]
+    ,"SuccessionTV","femalefashionadvice","relationship_advice"
+    "lgbt","unpopularopinion","terriblefacebookmemes","copypasta"]
 
     overwrite = False
     lastSub = xo.lastSub.value()
@@ -148,7 +151,7 @@ def experiment2():
     subCount = lastSub
     xo.lastSub += 1
     # subCount = 1
-    if subCount == len(subreddits):
+    if subCount+1 == len(subreddits):
         print("FINISHED ALL SUBREDDITS")
         xo.lastSub = 0
         return True
@@ -284,6 +287,7 @@ def experiment2():
         for season in seasons:
             subTotal += finalResults[season]["subs"][sub]["count"]
         print(f"   r/{sub}:{subTotal}")
+    print(f"Subreddit {finalSub}:{subCount}/{len(subreddits)}")
 
     # pp(finalResults)
 
